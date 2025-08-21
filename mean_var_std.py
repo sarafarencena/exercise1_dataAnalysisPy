@@ -8,17 +8,17 @@ def calculate(list):
     # Reshape into 3x3 matrix
     matrix = np.array(list).reshape(3, 3)
     
-    # Mean calculations
-    mean_axis0 = matrix.mean(axis=0).tolist()  # per column
-    mean_axis1 = matrix.mean(axis=1).tolist()  # per row
-    mean_flat  = matrix.mean().item()          # overall mean
+    # mean
+    mean_axis0 = matrix.mean(axis=0).tolist()
+    mean_axis1 = matrix.mean(axis=1).tolist()
+    mean_flat  = matrix.mean().item()
     
-    # --- variance ---
+    # variance
     var_axis0 = matrix.var(axis=0).tolist()
     var_axis1 = matrix.var(axis=1).tolist()
     var_flat  = matrix.var().item()
 
-    # --- standard deviation ---
+    # standard deviation
     std_axis0 = matrix.std(axis=0).tolist()
     std_axis1 = matrix.std(axis=1).tolist()
     std_flat  = matrix.std().item()
@@ -38,7 +38,6 @@ def calculate(list):
     sum_axis1 = matrix.sum(axis=1).tolist()
     sum_flat  = matrix.sum().item()
 
-    # Build return dictionary (only for 'mean' for now)
     calculations = {
         'mean': [mean_axis0, mean_axis1, mean_flat],
         'variance': [var_axis0, var_axis1, var_flat],
